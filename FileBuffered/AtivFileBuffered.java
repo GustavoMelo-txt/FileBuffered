@@ -19,13 +19,13 @@ public class AtivFileBuffered {
 
             int i = 0;
             while (line != null) {
-                String[] attributes = line.split(",");
+                String[] attributes = line.split(";");
                 name[i] = attributes[0];
                 price[i] = Double.parseDouble(attributes[1]);
                 quantity[i] = Integer.parseInt(attributes[2]);
                 total[i] = price[i] * quantity[i];
 
-                lines[i] = name[i] + ", " + String.format("%.2f", total[i]);
+                lines[i] = name[i] + "; " + String.format("%.2f", total[i]);
 
                 i++;
                 line = br.readLine();
